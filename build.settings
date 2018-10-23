@@ -1,0 +1,65 @@
+--This is where you will handle orientation, define fonts, Android permissions, iOS settings, plugins and many other stuff.
+--You can find more about this file here -> https://coronalabs.com/blog/2014/07/08/tutorial-understanding-build-settings/
+
+settings =
+{
+    --Orientation settings
+    orientation =
+    {
+        default = "portrait",  --initial launch orientation
+        supported = { portrait },  --table of allowed options for auto-orientation.
+
+        --Options are: portrait, portraitUpsideDown, landscapeLeft, landscapeRight
+    },
+
+    --Android settings table. Please refer to the link at the top for more options.
+    android =
+    {
+        --googlePlayGamesAppId = "longAppID",  --long App ID number (use yours!)
+        usesPermissions = {
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_FINE_LOCATION", -- Permission to retrieve current location from the GPS.
+            "android.permission.ACCESS_COARSE_LOCATION", -- Permission to retrieve current location from WiFi or cellular service.
+            "android.permission.CAMERA",
+        },
+        useGoogleServicesJson = true,
+    },
+
+    --iOS settings table. Please refer to the link at the top for more options.
+    iphone =
+    {
+        plist =
+        {
+            --This is where you define fonts. You can find more about custom fonts here -> http://docs.coronalabs.com/guide/system/customFont/index.html
+            UIAppFonts =
+            {
+                --"BasultoHandLetter-Bold.ttf",
+                --"BasultoHandLetter-Regular.ttf",
+            },
+        },
+    },
+
+    --Corona Plugins. More about what you can use and how you can integrate those are here -> http://docs.coronalabs.com/plugin/index.html
+    plugins =
+    {
+        ["plugin.zip"] =
+        {
+            publisherId = "com.coronalabs"
+        },
+        ["plugin.androidCameraView"] =
+        {
+            publisherId = "tech.scotth"
+        },
+        --[[
+        ["facebook"] =
+        {
+            publisherId = "com.coronalabs",
+        },
+
+        ["plugin.google.play.services"] =
+        {
+            publisherId = "com.coronalabs"
+        },
+        ]]--
+    },
+}
